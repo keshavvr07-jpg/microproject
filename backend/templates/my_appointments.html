@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Appointments</title>
+    <link rel="stylesheet" href="http://127.0.0.1:5500/static/style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>My Appointments</h1>
+
+    <nav>
+        <a href="http://127.0.0.1:5500/index.html">Home</a>
+        <a href="http://127.0.0.1:5000/my_appointments">My Appointments</a>
+    </nav>
+</header>
+
+<main>
+
+    <h2>Appointment Details</h2>
+
+    <table>
+
+        <tr>
+            <th>Doctor</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Status</th>
+        </tr>
+
+        {% for appointment in appointments %}
+
+        <tr>
+            <td>{{ appointment[0] }}</td>
+            <td>{{ appointment[1] }}</td>
+            <td>{{ appointment[2] }}</td>
+            <td>{{ appointment[3] }}</td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+    <br>
+
+    <a href="http://127.0.0.1:5500/appointment.html">
+        <button>Book New Appointment</button>
+    </a>
+
+</main>
+
+<footer>
+    <p>Cloud-Based Hospital Appointment System</p>
+</footer>
+
+</body>
+
+</html>

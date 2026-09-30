@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Doctor Dashboard</title>
+    <link rel="stylesheet" href="http://127.0.0.1:5500/static/style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Doctor Dashboard</h1>
+</header>
+
+<main>
+
+    <h2>Appointment Requests</h2>
+
+    <table>
+
+        <tr>
+            <th>Patient Name</th>
+            <th>Doctor</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+
+        {% for appointment in appointments %}
+
+        <tr>
+
+            <td>{{ appointment[1] }}</td>
+
+            <td>{{ appointment[2] }}</td>
+
+            <td>{{ appointment[3] }}</td>
+
+            <td>{{ appointment[4] }}</td>
+
+            <td>{{ appointment[5] }}</td>
+
+            <td>
+
+                <a href="/update_appointment/{{ appointment[0] }}/Confirmed">
+                    <button>Confirm</button>
+                </a>
+
+                <a href="/update_appointment/{{ appointment[0] }}/Rejected">
+                    <button>Reject</button>
+                </a>
+
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</main>
+
+<footer>
+    <p>Cloud-Based Hospital Appointment System</p>
+</footer>
+
+</body>
+
+</html>
